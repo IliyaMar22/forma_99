@@ -1,0 +1,481 @@
+:root {
+  --tone-100: #000000;
+  --tone-200: #222222;
+  --tone-300: #5b5c57;
+  --tone-400: #e3e4d8;
+  --tone-500: #fe0100;
+  --tone-600: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: var(--tone-400);
+  color: var(--tone-100);
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1, h2, p {
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 6rem);
+  letter-spacing: clamp(-0.05rem, -0.1vw, -0.1rem);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 4vw, 3rem);
+  letter-spacing: clamp(-0.02rem, -0.05vw, -0.05rem);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+p {
+  font-size: clamp(0.875rem, 2.5vw, 3rem);
+  letter-spacing: clamp(-0.01rem, -0.025vw, -0.025rem);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  padding: clamp(1rem, 2vw, 2rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  mix-blend-mode: difference;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+
+nav p, nav a {
+  font-size: clamp(0.875rem, 1.5vw, 1.5rem);
+  color: var(--tone-400);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+nav div {
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 2rem);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+nav a:active {
+  opacity: 0.5;
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  nav a {
+    padding: 0.5rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  nav {
+    padding: 1.25rem;
+  }
+  
+  nav div {
+    gap: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  
+  nav div {
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  nav p, nav a {
+    font-size: 0.875rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  nav {
+    padding: 0.75rem;
+  }
+  
+  nav div {
+    gap: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  nav p, nav a {
+    font-size: 0.75rem;
+  }
+}
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100vh; /* Fallback for older browsers */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 2vw, 2rem);
+}
+
+.section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.section-bg img {
+  opacity: 0.3;
+}
+
+section h1 {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
+section h2 {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
+section p {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
+.intro h1,
+.services h1,
+.outro h1,
+.hero h1 {
+  position: relative;
+  color: var(--tone-500);
+}
+
+section h1 .block-line-wrapper,
+section h2 .block-line-wrapper,
+section p .block-line-wrapper {
+  margin: 0 auto;
+}
+
+.block-line-wrapper {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.block-line {
+  position: relative;
+  display: block;
+}
+
+.block-revealer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101%;
+  height: 101%;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 1;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  width: 100%;
+  max-width: 1200px;
+  margin-top: clamp(2rem, 4vw, 4rem);
+  position: relative;
+  z-index: 1;
+  padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member h3 {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02rem;
+  font-weight: 500;
+}
+
+.team-member p {
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  margin-top: 0.5rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.team-member-image {
+  width: clamp(120px, 20vw, 200px);
+  height: clamp(120px, 20vw, 200px);
+  border-radius: 50%;
+  margin: 0 auto;
+  background: var(--tone-300);
+  overflow: hidden;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  width: 100%;
+  max-width: 1400px;
+  margin-top: clamp(2rem, 4vw, 4rem);
+  position: relative;
+  z-index: 1;
+  padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-image {
+  width: 100%;
+  height: clamp(200px, 30vw, 300px);
+  overflow: hidden;
+  position: relative;
+}
+
+.project-item h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.project-item p {
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  text-transform: none;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin: 0;
+}
+
+footer {
+  padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem);
+  text-align: center;
+  background: var(--tone-200);
+  color: var(--tone-400);
+  width: 100%;
+}
+
+footer p {
+  font-size: 1rem;
+  text-transform: none;
+  margin: 0.5rem 0;
+  font-weight: 400;
+}
+
+footer h2 {
+  margin-bottom: 2rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .production-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  section {
+    min-height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .team-member-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
+  .production-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .production-item {
+    padding: 1.5rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  section {
+    padding: 2rem 0.75rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .team-member-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .projects-grid {
+    gap: 1.5rem;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .production-item {
+    padding: 1rem;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  section {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+}
+
+.production-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  width: 100%;
+  max-width: 1400px;
+  margin-top: clamp(2rem, 4vw, 4rem);
+  position: relative;
+  z-index: 1;
+  padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
+.production-item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 1.5vw, 1.5rem);
+  padding: clamp(1rem, 2vw, 2rem);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.production-item h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.production-item p {
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  text-transform: none;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin: 0;
+}
+
